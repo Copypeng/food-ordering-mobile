@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>订早餐！就是过分喜欢</title>
+	<title>欢迎订购过分喜欢早餐！</title>
 	<link rel="stylesheet" href="/resource/css/jquery.mobile-1.4.2.min.css">
 	<script src="/resource/js/jquery-1.9.1.min.js"></script>
 	<script src="/resource/js/jquery.mobile-1.4.2.min.js"></script>
@@ -13,40 +13,93 @@
 			$( "body>[data-role='panel']" ).panel();
 		});
 	</script>
+	<style>
+		.ui-content{
+			padding: 0px;
+		}
+	</style>
 </head>
 
 <body>
 <!-- leftpanel -->
 <div data-role="panel" id="info-panel" data-position="left" data-display="push" data-theme="a">
-	<h3>Left Panel: Push</h3>
-	<p>This panel is positioned on the left with the push display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
-	<p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
+	<h3>关于：</h3>
+	<p>绿色健康，准时高效！<br/>鱼山校草为你送早餐！</p>
+	<h3>联系我们：</h3>
+	<p><li>过分先生：<a href="tel:15092056500">15092056500</a></li>
+		<li>喜欢先生：<a href="tel:18765951575">18765951575</a></li>
+	</p>
 
-</div><!-- /leftpanel2 -->
+</div><!-- /leftpanel-->
 <!-- Start of first page: #one -->
 <div data-role="page" id="index">
 
 	<div data-role="header">
 		<a href="#info-panel" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-bars">关于</a>
-		<h1>欢迎订购过分喜欢早餐！</h1>
+		<h1>过分喜欢早餐！</h1>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
-		<h2>One</h2>
+		<img src="/resource/images/breakfast.jpg" alt="过分喜欢早餐" style="border-radius: 0px;
+min-width: 100%;max-width: 100%;margin:0 auto; display:block;">
+		<div data-role="tabs">
+			<div data-role="navbar">
+				<ul>
+				  <li class="ui-tabs-active"><a href="#list-1" data-theme="a" data-ajax="false" class="ui-btn-active">主食</a></li>
+				  <li><a href="#list-2" data-theme="a" data-ajax="false">汤粥</a></li>
+				  <li><a href="#list-3" data-theme="a" data-ajax="false">饮料</a></li>
+				  <li><a href="#list-4" data-theme="a" data-ajax="false">套餐</a></li>
+				</ul>
+			</div>
+			<div id="list-1" class="ui-content">
+				<ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true">
+					<li><a href="#">
+						<img src="../_assets/img/album-bb.jpg">
+					<h2>Broken Bells</h2>
+					<p>Broken Bells</p></a>
+						<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+					</li>
+					
+					<li><a href="#">
+						<img src="../_assets/img/album-hc.jpg">
+					<h2>Warning</h2>
+					<p>Hot Chip</p></a>
+						<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+					</li>
+					<li><a href="#">
+						<img src="../_assets/img/album-p.jpg">
+					<h2>Wolfgang Amadeus Phoenix</h2>
+					<p>Phoenix</p></a>
+						<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+					</li>
+				</ul>
+			</div>
+			<div id="list-2" class="ui-content">
+				<ul data-role="listview">
+					<li><a href="#">Acura</a></li>
+					<li><a href="#">Audi</a></li>
+					<li><a href="#">BMW</a></li>
+					<li><a href="#">Cadillac</a></li>
+					<li><a href="#">Ferrari</a></li>
+				</ul>
+			</div>
+			<div id="list-3" class="ui-content">
+				<h1>第三个list</h1>
+			</div>
+			<div id="list-4" class="ui-content">
+				<div>第四个list</div>
+			</div>
+			
+		</div>
 
-		<p>I have an <code>id</code> of "one" on my page container. I'm first in the source order so I'm shown when the page loads.</p>
 
-		<p>This is a multi-page boilerplate template that you can copy to build your first jQuery Mobile page. This template contains multiple "page" containers inside, unlike a single page template that has just one page within it.</p>
-		<p>Just view the source and copy the code to get started. All the CSS and JS is linked to the jQuery CDN versions so this is super easy to set up. Remember to include a meta viewport tag in the head to set the zoom level.</p>
-		<p>You link to internal pages by referring to the <code>id</code> of the page you want to show. For example, to <a href="#two">link</a> to the page with an <code>id</code> of "two", my link would have a <code>href="#two"</code> in the code.</p>
-
-		<h3>Show internal pages:</h3>
-		<p><a href="#order-confirm" class="ui-btn ui-shadow ui-corner-all">Show page "two"</a></p>
 	</div><!-- /content -->
 
-	<div data-role="footer" data-theme="a">
-		<h4>Page Footer</h4>
+	<div data-role="footer" data-theme="a" data-position="fixed" style="text-align: center;">
+		<a href="#order-confirm" class="ui-btn ui-corner-all ui-shadow">提交订单<span>（3）</span>
+		</a>
 	</div><!-- /footer -->
+	
 </div><!-- /page one -->
 
 <!-- Start of second page: #two -->
@@ -64,9 +117,10 @@
 
 	</div><!-- /content -->
 
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
+<div data-role="footer" data-theme="a" data-position="fixed" data-fullscreen="true">
+	<h1>Fullscreen fixed Footer</h1>
+</div><!-- /footer -->
+	
 </div><!-- /page two -->
 </body>
 </html>
